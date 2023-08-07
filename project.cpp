@@ -5,6 +5,8 @@ using namespace std;
 string arr1[20],arr2[20],arr3[20],arr4[20],arr5[20];
 int total=0;
 
+class execute{	public: 
+
 void enter()
 {
 	int num=0;
@@ -67,7 +69,7 @@ void show()
 }
 
 void search()
-{
+{ int count;
 	if(total==0)
 	{
 	cout<<"No data is entered"<<endl;
@@ -76,22 +78,25 @@ void search()
 		string rollno;
 		cout<<"Enter the roll no of student"<<endl;
 		cin>>rollno;
+		count= 0;
 		for(int i=0;i<total;i++)
-		{
+		{ 
 			if(rollno==arr2[i])
 			{
 				cout<<"Name "<<arr1[i]<<endl;
 				cout<<"Roll no "<<arr2[i]<<endl;
 				cout<<"Facalty "<<arr3[i]<<endl;
 				cout<<"Class "<<arr4[i]<<endl;
-				cout<<"Contact "<<arr5[i]<<endl;
+				cout<<"Contact "<<arr5[i]<<endl; 
+				count ++;
 			}
 		}
 	}
+	if(count==0) cout<<"Invalid input"<<endl;
 }
 
 void update()
-{
+{ int count;
 	if(total==0)
 	{
 		cout<<"No data is entered"<<endl;
@@ -100,6 +105,7 @@ void update()
 		string rollno;
 		cout<<"Enter the roll no of student which you want to update"<<endl;
 		cin>>rollno;
+		count= 0;
 		for(int i=0;i<total;i++)
 		{
 			if(rollno==arr2[i])
@@ -123,13 +129,15 @@ void update()
 				cin>>arr4[i];
 				cout<<"Enter contact ";
 				cin>>arr5[i];
+				count ++;
 			}
 		}
 	}
+	if(count==0) cout<<"Invalid input"<<endl;
 }
 
 void deletedata()
-{
+{ int count;
 	if(total==0)
 	{
 		cout<<"No data is entered"<<endl;
@@ -139,6 +147,7 @@ void deletedata()
 		cout<<"Press 1 to delete all record"<<endl;
 		cout<<"Press 2 to delete specific record"<<endl;
 		cin>>a;
+		
 		if(a==1)
 		{
 			total=0;
@@ -149,6 +158,7 @@ void deletedata()
 			string rollno;
 			cout<<"Enter the roll no of student which you wanted to delete"<<endl;
 			cin>>rollno;
+			count = 0;
 			for(int i=0;i<total;i++)
 			{
 				if(rollno==arr2[i])
@@ -160,26 +170,25 @@ void deletedata()
 						arr3[j]=arr3[j+1];
 						arr4[j]=arr4[j+1];
 						arr5[j]=arr5[j+1];
+						count ++;
 					}
 					total--;
 					cout<<"Your required record is deleted"<<endl;
 				}
 			}
 		}
-		else
-		{
-			cout<<"Invalid input";
-		}
 	}
+	if(count==0) cout<<"Invalid input"<<endl;
 }
+};
 
 int main()
-{
+{ 
 	A:
 		system("cls");
 	int value;
 	while(true)
-	{
+	{ execute e;
 		cout<<"\nPress 1 to enter data"<<endl;
 		cout<<"Press 2 to show data"<<endl;
 		cout<<"Press 3 to search data"<<endl;
@@ -189,21 +198,20 @@ int main()
 		cin>>value;
 		switch(value)
 		{
-			case 1: enter();
+			case 1: e.enter();
 					break;
-			case 2: show();
+			case 2: e.show();
 					break;
-			case 3: search();
+			case 3: e.search();
 					break;
-			case 4: update();
+			case 4: e.update();
 					break;
-			case 5: deletedata();
+			case 5: e.deletedata();
 					break;
 			case 6: exit(0);
 					break;
 			default: cout<<"Invalid input"<<endl;
-					break;
-		
+					throw ;
 		}
 		getch();
 		goto A;	
