@@ -24,7 +24,7 @@ void enter()
 			cin>>arr1b[i];			
 			cout<<"Enter Roll no ";
 			cin>>arr2[i];
-			cout<<"Enter facalty ";
+			cout<<"Enter faculty ";
 			cin>>arr3[i];
 			cout<<"Enter class ";
 			cin>>arr4[i];
@@ -42,7 +42,7 @@ void enter()
 			cin>>arr1b[i];
 			cout<<"Enter Roll no ";
 			cin>>arr2[i];
-			cout<<"Enter facalty ";
+			cout<<"Enter faculty ";
 			cin>>arr3[i];
 			cout<<"Enter class ";
 			cin>>arr4[i];
@@ -65,7 +65,7 @@ void show()
 			cout<<"\nData of Student "<<i+1<<endl<<endl;
 			cout<<"Name "<<arr1a[i]<<" "<<arr1b[i]<<endl;
 			cout<<"Roll no "<<arr2[i]<<endl;
-			cout<<"Facalty "<<arr3[i]<<endl;
+			cout<<"Faculty "<<arr3[i]<<endl;
 			cout<<"Class "<<arr4[i]<<endl;
 			cout<<"Contact "<<arr5[i]<<endl;
 		}
@@ -89,7 +89,7 @@ void search()
 			{
 				cout<<"Name "<<arr1a[i]<<" "<<arr1b[i]<<endl;
 				cout<<"Roll no "<<arr2[i]<<endl;
-				cout<<"Facalty "<<arr3[i]<<endl;
+				cout<<"Faculty "<<arr3[i]<<endl;
 				cout<<"Class "<<arr4[i]<<endl;
 				cout<<"Contact "<<arr5[i]<<endl; 
 				count ++;
@@ -118,7 +118,7 @@ void update()
 				cout<<"Data of Student "<<i+1<<endl;
 				cout<<"Name "<<arr1a[i]<<" "<<arr1b[i]<<endl;
 				cout<<"Roll no "<<arr2[i]<<endl;
-				cout<<"Facalty "<<arr3[i]<<endl;
+				cout<<"Faculty "<<arr3[i]<<endl;
 				cout<<"Class "<<arr4[i]<<endl;
 				cout<<"Contact "<<arr5[i]<<endl;
 				
@@ -129,7 +129,7 @@ void update()
 				cin>>arr1b[i];
 				cout<<"Enter Roll no ";
 				cin>>arr2[i];
-				cout<<"Enter facalty ";
+				cout<<"Enter faculty ";
 				cin>>arr3[i];
 				cout<<"Enter class ";
 				cin>>arr4[i];
@@ -162,7 +162,7 @@ void deletedata()
 		else if(a==2)
 		{
 			string rollno;
-			cout<<"Enter the roll no of student which you wanted to delete"<<endl;
+			cout<<"Enter the roll no of student which you want to delete"<<endl;
 			cin>>rollno;
 			count = 0;
 			for(int i=0;i<total;i++)
@@ -225,4 +225,3 @@ int main()
 	}
 	return 0;
 }
-
